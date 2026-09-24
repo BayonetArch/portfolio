@@ -74,7 +74,7 @@ export default function Home() {
     <div className=" h-full">
       <Introduction />
       <PhotoCard />
-      <div className="flex gap-2 m-2">
+      <div className="flex gap-2 mt-2 mb-2">
         <Button
           variant="secondary"
           size="lg"
