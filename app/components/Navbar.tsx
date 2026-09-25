@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/#home" },
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
   { label: "About", href: "/#about" },

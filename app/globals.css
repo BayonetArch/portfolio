@@ -102,7 +102,7 @@
   --accent: hsl(120, 14%, 54%);
   --accent-foreground: hsl(0, 0%, 1%);
   --destructive: hsl(0, 100%, 42%);
-  --border: hsl(210, 13%, 50%);
+  --border: hsla(210, 13%, 50%,0.6);
   --input: hsl(210, 13%, 50%);
   --ring: hsl(120, 14%, 54%);
   --chart-1: hsl(120, 14%, 54%);

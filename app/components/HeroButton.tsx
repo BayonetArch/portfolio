@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { redirect } from "next/navigation";
+
+function scrollToSection(sectionId: string) {
+  const target = document.getElementById(sectionId);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function HeroButtons() {
   return (
@@ -10,18 +15,14 @@ export default function HeroButtons() {
         variant="secondary"
         size="lg"
         className="text-md hover:cursor-pointer"
-        onClick={() => {
-          redirect("/#projects");
-        }}
+        onClick={() => scrollToSection("projects")}
       >
         View Projects
       </Button>
       <Button
         size="lg"
         className="text-md hover:cursor-pointer"
-        onClick={() => {
-          redirect("/#contact");
-        }}
+        onClick={() => scrollToSection("contact")}
       >
         Get in touch
       </Button>
