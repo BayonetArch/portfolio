@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Photo from "./assets/photo.jpg";
-import { Button } from "@/components/ui/button";
 import ProjectsCard from "./components/ProjectsCard";
+import HeroButtons from "./components/HeroButton";
 
 function Introduction() {
   return (
@@ -35,17 +35,17 @@ const aboutItems = [
   },
   {
     topic: "Languages",
-    desc: "TS JS RUST C",
+    desc: "TS . JS . RUST . C",
   },
   {
     topic: "Interests",
-    desc: "Performance Tooling Backend",
+    desc: "Performance Tooling . Backend",
   },
 ];
 
 function About() {
   return (
-    <div>
+    <section id="about">
       <h1>About me</h1>
       <p>
         I work across the whole stack, but my main foucs is writing React and
@@ -57,15 +57,18 @@ function About() {
         <hr />
         {aboutItems.map((item) => (
           <div key={item.topic}>
-            <div key={item.topic} className="flex gap-2 p-2">
+            <div
+              key={item.topic}
+              className="flex gap-2 p-2 items-center justify-between "
+            >
               <p className="text-muted-foreground">{item.topic}</p>
-              <p className="ml-auto">{item.desc}</p>
+              <p className="text-right">{item.desc}</p>
             </div>
             <hr className="" />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -74,23 +77,13 @@ export default function Home() {
     <div className=" h-full">
       <Introduction />
       <PhotoCard />
-      <div className="flex gap-2 mt-2 mb-2">
-        <Button
-          variant="secondary"
-          size="lg"
-          className="text-md hover:cursor-pointer"
-        >
-          View Projects
-        </Button>
-        <Button size="lg" className="text-md hover:cursor-pointer">
-          Get in touch
-        </Button>
-      </div>
+      <HeroButtons />
       <div>
         <p>Available for work </p>
       </div>
       <About />
       <ProjectsCard />
+      <div className="h-screen" />
     </div>
   );
 }

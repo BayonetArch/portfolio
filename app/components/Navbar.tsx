@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Link from "next/link";
+
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -18,9 +18,9 @@ import {
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-  { label: "About", href: "/about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/#about" },
 ];
 
 function MobileNav() {
@@ -47,9 +47,9 @@ function MobileNav() {
             <SheetClose
               nativeButton={false}
               render={
-                <Link key={item.href} className="text-lg" href={item.href}>
+                <a key={item.href} className="text-lg" href={item.href}>
                   {item.label}
-                </Link>
+                </a>
               }
               key={item.href}
             />
@@ -70,7 +70,11 @@ function NavLinks() {
       {navItems.map((item) => (
         <NavigationMenuItem key={item.href}>
           <NavigationMenuLink
-            render={<Link href={item.href}>{item.label}</Link>}
+            render={
+              <a href={item.href} className="text-lg">
+                {item.label}
+              </a>
+            }
           />
         </NavigationMenuItem>
       ))}

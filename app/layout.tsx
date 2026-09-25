@@ -4,14 +4,7 @@ import Navbar from "./components/Navbar";
 import SwitchTheme from "./components/SwitchTheme";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
-import {
-  Braces,
-  Code,
-  Command,
-  Hexagon,
-  SquareActivity,
-  SquareCode,
-} from "lucide-react";
+import { Command } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
