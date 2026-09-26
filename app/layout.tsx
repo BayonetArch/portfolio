@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import { Command } from "lucide-react";
 import Footer from "./components/Footer";
+import { geistMono, geistPixel, geistSans, oswald } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 function Logo() {
   return (
     <Link href="/" className="flex gap-1 items-center ">
-      <Command className="size-6" />
+      <Command className="size-6 text-chart-5" />
     </Link>
   );
 }
@@ -23,7 +24,11 @@ function Logo() {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     /* documented way to supress the hydration warning(i think)*/
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${oswald.variable} ${geistPixel.variable} ${geistMono.variable} ${geistSans.variable}`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
         <ThemeProvider
           attribute="class"

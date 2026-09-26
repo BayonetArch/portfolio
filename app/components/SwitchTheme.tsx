@@ -12,6 +12,7 @@ export default function SwitchTheme() {
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"
+      className="text-chart-5"
       onClick={() => {
         const isDark = document.documentElement.classList.contains("dark");
         setTheme(isDark ? "light" : "dark");

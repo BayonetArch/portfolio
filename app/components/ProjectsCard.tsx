@@ -1,9 +1,9 @@
+import SectionHeading from "./SectionHeading";
+
 export default function ProjectsCard() {
   return (
     <section id="projects" className="mt-24">
-      <p className="text-xl font-bold text-border text-center">
-        Pinned Projects
-      </p>
+      <SectionHeading>Pinned Projects</SectionHeading>
       <h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
         asperiores quas consectetur eveniet maiores quo eligendi ipsum facilis

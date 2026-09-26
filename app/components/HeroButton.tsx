@@ -14,14 +14,14 @@ export default function HeroButtons() {
       <Button
         variant="secondary"
         size="lg"
-        className="text-md hover:cursor-pointer"
+        className=" hover:cursor-pointer rounded-md  transition-all duration-300"
         onClick={() => scrollToSection("projects")}
       >
         View Projects
       </Button>
       <Button
         size="lg"
-        className="text-md hover:cursor-pointer"
+        className="text-md hover:cursor-pointer rounded-md transition-all duration-300"
         onClick={() => scrollToSection("contact")}
       >
         Get in touch

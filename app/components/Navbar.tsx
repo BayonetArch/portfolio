@@ -30,11 +30,12 @@ function MobileNav() {
         render={
           <Button
             variant="ghost"
+            aria-label="Toggle Navigation"
             className="flex flex-col gap-2 w-max sticky top-2 ml-auto transition-all duration-300 ease-in-out"
           >
-            <span className="block h-0.5 w-7 bg-accent"></span>
-            <span className="block h-0.5 w-7 bg-accent"></span>
-            <span className="block h-0.5 w-7 bg-accent"></span>
+            <span className="block h-0.5 w-7 bg-chart-5/60"></span>
+            <span className="block h-0.5 w-7 bg-chart-5/60"></span>
+            <span className="block h-0.5 w-7 bg-chart-5/60"></span>
           </Button>
         }
       />
@@ -47,7 +48,11 @@ function MobileNav() {
             <SheetClose
               nativeButton={false}
               render={
-                <a key={item.href} className="text-lg" href={item.href}>
+                <a
+                  key={item.href}
+                  className="text-lg text-chart-5"
+                  href={item.href}
+                >
                   {item.label}
                 </a>
               }
