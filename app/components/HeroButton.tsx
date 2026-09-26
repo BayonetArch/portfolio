@@ -13,7 +13,7 @@ export default function HeroButtons() {
     <div className="flex gap-2 mt-2 mb-2">
       <Button
         size="lg"
-        className=" hover:cursor-pointer rounded-md  transition-all duration-300 bg-accent text-secondary "
+        className=" hover:cursor-pointer rounded-md  transition-all duration-300 bg-accent text-secondary dark:text-secondary-foreground"
         onClick={() => scrollToSection("projects")}
       >
         View Projects

@@ -44,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <Navbar />
             </div>
           </header>
-          <div className="mt-6 p-6"> {children}</div>
+          <div className="mt-6"> {children}</div>
           <Footer />
         </ThemeProvider>
       </body>

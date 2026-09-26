@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Photo from "./assets/photo.jpg";
-import ProjectsCard from "./components/ProjectsCard";
+import Projects from "./components/Projects";
 import SectionHeading from "./components/SectionHeading";
 import HeroButtons from "./components/HeroButton";
 import { Link as LinkIcon } from "lucide-react";
 
 function Introduction() {
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className="flex flex-col gap-6">
       <SectionHeading>Introduction</SectionHeading>
 
       <div className=" text-muted-foreground flex flex-col">
@@ -18,10 +18,7 @@ function Introduction() {
             Sudip Paudel.
           </span>
         </p>
-        <p>
-          A passonate <span className=" ">full stack</span> developer
-          from Nepal.
-        </p>
+        <p>A passonate full stack developer from Nepal.</p>
         <p>I specialize in languages such as</p>
         <p className="text-foreground">Javascript, React, Next js, Rust</p>
       </div>
@@ -31,7 +28,7 @@ function Introduction() {
 
 function PhotoCard() {
   return (
-    <div>
+    <div className="">
       <Image
         src={Photo}
         alt="photo of sudip paudel"
@@ -60,7 +57,7 @@ const aboutItems = [
 
 function About() {
   return (
-    <section id="about">
+    <section id="about" className="">
       <SectionHeading>About me</SectionHeading>
       <div className="flex flex-col gap-2 mt-6">
         <p className="text-chart-5 ">
@@ -154,10 +151,10 @@ function HeroHeader() {
 
 export default function Home() {
   return (
-    <section className="h-full flex flex-col gap-14" id="home">
+    <section className="h-full flex flex-col gap-14 p-8" id="home">
       <HeroHeader />
       <About />
-      <ProjectsCard />
+      <Projects />
       <Contact />
     </section>
   );
