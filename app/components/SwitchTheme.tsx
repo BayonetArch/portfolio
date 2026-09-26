@@ -18,8 +18,8 @@ export default function SwitchTheme() {
         setTheme(isDark ? "light" : "dark");
       }}
     >
-      <Sun className="hidden dark:block size-7" />
-      <Moon className=" block dark:hidden size-7" />
+      <Sun className="hidden dark:block size-6" />
+      <Moon className=" block dark:hidden size-6" />
     </Button>
   );
 }

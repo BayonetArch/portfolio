@@ -12,13 +12,14 @@ function Introduction() {
 
       <div className=" text-muted-foreground flex flex-col">
         <p>
-          <span className="font-bold text-xl text-foreground">HI</span>, I am{" "}
-          <span className={`font-bold text-xl text-accent font-pixel`}>
+          <span className="font-bold text-xl text-muted-foreground">HI</span>, I
+          am{" "}
+          <span className={`font-bold text-xl text-foreground font-pixel`}>
             Sudip Paudel.
           </span>
         </p>
         <p>
-          A Passonate <span className=" text-xl">full stack developer</span>{" "}
+          A Passonate <span className=" text-xl">full stack</span> developer
           from Nepal.
         </p>
         <p>I specialize in languages such as</p>
@@ -109,7 +110,7 @@ function ContactLinks({ name, href }: { name: string; href: string }) {
   return (
     <a href={href} target="_blank" className="flex gap-2">
       <LinkIcon className="size-4" />
-      <span className="text-lg text-accent hover:text-foreground transition-all duration-300">
+      <span className="text-lg text-muted-foreground hover:text-foreground transition-all duration-300">
         {name}
       </span>
     </a>

@@ -12,16 +12,16 @@ export default function HeroButtons() {
   return (
     <div className="flex gap-2 mt-2 mb-2">
       <Button
-        variant="secondary"
         size="lg"
-        className=" hover:cursor-pointer rounded-md  transition-all duration-300"
+        className=" hover:cursor-pointer rounded-md  transition-all duration-300 bg-accent text-secondary "
         onClick={() => scrollToSection("projects")}
       >
         View Projects
       </Button>
       <Button
         size="lg"
-        className="text-md hover:cursor-pointer rounded-md transition-all duration-300"
+        variant="secondary"
+        className="text-md hover:cursor-pointer rounded-md transition-all duration-300 text-muted-foreground"
         onClick={() => scrollToSection("contact")}
       >
         Get in touch

@@ -31,7 +31,7 @@ function MobileNav() {
           <Button
             variant="ghost"
             aria-label="Toggle Navigation"
-            className="flex flex-col gap-2 w-max sticky top-2 ml-auto transition-all duration-300 ease-in-out"
+            className="flex flex-col gap-2 w-max sticky top-2 ml-auto transition-all duration-300 ease-in-out scale-95"
           >
             <span className="block h-0.5 w-7 bg-chart-5/60"></span>
             <span className="block h-0.5 w-7 bg-chart-5/60"></span>
