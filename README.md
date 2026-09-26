@@ -4,4 +4,4 @@ This is a simple portfolio site made with Next.js(and modern tech stack).
 All handwritten codes for learning purposes.
 This was not `create me a cool portfolio site` prompt given to AI.
 
-Site is not fully ready yet and is hosted [here](www.sudippaudel.info.np).
+Site is not fully ready yet and is hosted [here](https://sudippaudel.info.np).
