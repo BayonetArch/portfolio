@@ -19,7 +19,7 @@ function Introduction() {
         </p>
         <p>
           A Passonate <span className=" text-xl">full stack developer</span>{" "}
-          from nepal.
+          from Nepal.
         </p>
         <p>I specialize in languages such as</p>
         <p className="text-foreground">Javascript, React, Next js, Rust</p>
