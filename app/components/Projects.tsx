@@ -1,5 +1,7 @@
 import SectionHeading from "./SectionHeading";
-import Image, { StaticImageData } from "next/image";
+import ProjectPreview from "./ProjectPreview";
+import { StaticImageData } from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import TxLaunchPreview from "../assets/tx_launch.png";
 import NeoKutPreview from "../assets/neo_kut.png";
 import FilmPivotPreview from "../assets/film-pivot-react.png";
@@ -7,7 +9,7 @@ import HyprZoomerPreview from "../assets/hypr_zoomer.png";
 
 type Project = {
   title: string;
-  desc: string;
+  descs: string[];
   projectLinks?: { siteName: string; link: string }[];
   previewImgSrc: StaticImageData;
   previewImgAlt: string;
@@ -17,7 +19,12 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Neo Kut",
-    desc: "A (future) open source native video editor written in rust",
+    descs: [
+      "A (future) open source native video editor written in rust. Fully documented on youtube live.",
+      "Neo Kut is written using 'gstreamer-rs' for video processing, egui for gui and winit for cross-platform windowing. It is still work in progress by a single guy(me), but will be open sourced in future and available to contributions.",
+      "Neo Kut aims to be a open source video editor alternative without annoying popups. Check out the below youtube link for its development process.",
+    ],
+
     projectLinks: [
       {
         siteName: "youtube",
@@ -26,11 +33,14 @@ const projects: Project[] = [
     ],
     previewImgSrc: NeoKutPreview,
     previewImgAlt: "preview of neo kut project",
-    tags: ["rust", "native"],
+    tags: ["rust", "native", "egui"],
   },
   {
-    title: "Fim Pivot",
-    desc: "A simple website to search for movie information. Built with React.",
+    title: "Film Pivot",
+    descs: [
+      "A learning project, and a React rewrite of my older Film Pivot site. You type a title and it debounces the query against the OMDb API and shows u the movie results.",
+      "Built with React 19, Vite and react-router-dom, styled with CSS Modules, animated with the View Transitions API, Deployed on Vercel.",
+    ],
     projectLinks: [
       {
         siteName: "github",
@@ -47,11 +57,15 @@ const projects: Project[] = [
   },
   {
     title: "Hypr Zoomer",
-    desc: "High performance wayland screen magnification, zoom, and live presentation annotation tool.",
+    descs: [
+      "A high performance screen magnifier for Wayland compositors, and a Wayland take on Tsoding's boomer.",
+      "It contains about 30 keybindings to cover all the features like flashlight, drawing, etc. config is TOML generated via --generate-config, and it installs straight from crates.io. MIT licensed.",
+      "It has a flashlight mode that dims everything outside a configurable circle just like in the preview image. it also has freehand pen, arrow and rectangle annotations with undo/redo, bilinear and nearest-neighbour scaling and much more. check it out on github link below.",
+    ],
     projectLinks: [
       {
         siteName: "github",
-        link: "htps://github.com/BayonetArch/hypr_zoomer",
+        link: "https://github.com/BayonetArch/hypr_zoomer",
       },
     ],
     previewImgSrc: HyprZoomerPreview,
@@ -60,46 +74,88 @@ const projects: Project[] = [
   },
   {
     title: "Tx Launch",
-    desc: "tx_launch is an command line tool for launching android apps. it uses android cmd line tools for launching apps.",
+    descs: [
+      "A command line tool for launching Android apps from Termux, so you can start anything by typing a friendly name instead of a package name.",
+      "it has an interactive REPL with list and help commands, or you can use a one-shot --run from a script, with name suggestions when a name misses. MIT licensed, prebuilt binaries in Releases.",
+      "Launching goes through am start, and you choose the backend: the bundled Termux am (slow, it runs on the JVM), termux-am from GitHub Action builds, or the system am, which is fastest but only works up to Android 10.",
+    ],
     projectLinks: [
       {
         siteName: "github",
-        link: "htps://github.com/BayonetArch/tx_launch",
+        link: "https://github.com/BayonetArch/tx_launch",
       },
     ],
     previewImgSrc: TxLaunchPreview,
-    previewImgAlt: "preview of hypr Zoomer project",
+    previewImgAlt: "preview of tx launch project",
     tags: ["android", "rust", "cli-tool"],
   },
 ];
 
 function ProjectCard({
+  index,
   title,
-  desc,
+  descs,
   projectLinks,
   previewImgSrc,
   previewImgAlt,
   tags,
-}: Project) {
+}: Project & { index: number }) {
   return (
-    <div className="outline flex flex-col gap-2">
-      <span className="text-2xl font-bold text-muted-foreground hover:text-foreground transition-all duration-300 text-center">
-        {title}
-      </span>
-      <p className="text-lg text-muted-foreground">{desc}</p>
-      <Image src={previewImgSrc} alt={previewImgAlt} width={400} height={300} />
-      {projectLinks &&
-        projectLinks.map((item) => (
-          <a key={item.link} href={item.link} target="_blank" className="">
-            {item.siteName}
-          </a>
-        ))}
-      <div>
-        {tags.map((tag) => (
-          <div key={tag}>{tag}</div>
-        ))}
+    <article className="group outline rounded-lg p-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary/40 sm:p-6">
+      <div className="flex flex-col gap-6 sm:grid sm:grid-cols-[1fr_1.2fr] sm:items-center sm:gap-8">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-baseline gap-3">
+            <span className="font-mono text-sm text-accent/70">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3 className="font-oswald text-2xl tracking-tight text-foreground">
+              {title}
+            </h3>
+          </div>
+          {descs.map((desc, index) => (
+            <div key={desc}>
+              <div className="hidden sm:flex">
+                <p className="text-muted-foreground">{desc}</p>
+              </div>
+
+              <div className="md:hidden flex">
+                {index < 2 && (
+                  <p className="text-muted-foreground flex-1">{desc}</p>
+                )}
+              </div>
+            </div>
+          ))}
+
+          <ul className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-md border border-border/60 px-2 py-0.5 text-xs tracking-wider text-muted-foreground uppercase"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <ProjectPreview src={previewImgSrc} alt={previewImgAlt} title={title} />
       </div>
-    </div>
+      {projectLinks?.length ? (
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border/60 pt-4">
+          {projectLinks.map((item) => (
+            <a
+              key={item.link}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors duration-300 hover:text-foreground"
+            >
+              {item.siteName}
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          ))}
+        </div>
+      ) : null}
+    </article>
   );
 }
 
@@ -107,17 +163,9 @@ export default function Projects() {
   return (
     <section id="projects" className="mt-24 flex flex-col gap-10">
       <SectionHeading>Pinned Projects</SectionHeading>
-      <div className="flex flex-col gap-12">
-        {projects.map((item) => (
-          <ProjectCard
-            key={item.title}
-            title={item.title}
-            desc={item.desc}
-            projectLinks={item.projectLinks}
-            previewImgSrc={item.previewImgSrc}
-            previewImgAlt={item.previewImgAlt}
-            tags={item.tags}
-          />
+      <div className="flex flex-col gap-8">
+        {projects.map((item, index) => (
+          <ProjectCard key={item.title} index={index} {...item} />
         ))}
       </div>
     </section>
