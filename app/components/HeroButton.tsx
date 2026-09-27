@@ -10,10 +10,10 @@ function scrollToSection(sectionId: string) {
 
 export default function HeroButtons() {
   return (
-    <div className="flex gap-2 mt-2 mb-2">
+    <div className="flex gap-2 mt-2 mb-2 ">
       <Button
         size="lg"
-        className=" hover:cursor-pointer rounded-md  transition-all duration-300 bg-accent text-secondary dark:text-secondary-foreground"
+        className="hover:cursor-pointer rounded-md  transition-all duration-300 bg-accent text-secondary dark:text-secondary-foreground md:p-6 md:rounded-lg"
         onClick={() => scrollToSection("projects")}
       >
         View Projects
@@ -21,7 +21,7 @@ export default function HeroButtons() {
       <Button
         size="lg"
         variant="secondary"
-        className="text-md hover:cursor-pointer rounded-md transition-all duration-300 text-muted-foreground"
+        className="text-md hover:cursor-pointer rounded-md transition-all duration-300 text-muted-foreground md:p-6 md:rounded-lg"
         onClick={() => scrollToSection("contact")}
       >
         Get in touch

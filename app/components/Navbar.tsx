@@ -18,9 +18,9 @@ import {
 
 const navItems = [
   { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
-  { label: "About", href: "/#about" },
 ];
 
 function MobileNav() {
@@ -76,7 +76,7 @@ function NavLinks() {
         <NavigationMenuItem key={item.href}>
           <NavigationMenuLink
             render={
-              <a href={item.href} className="text-lg">
+              <a href={item.href} className="text-lg ">
                 {item.label}
               </a>
             }

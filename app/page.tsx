@@ -32,6 +32,7 @@ function PhotoCard() {
       <Image
         src={Photo}
         alt="photo of sudip paudel"
+        sizes="(max-width: 640px) 100vw, 45vw"
         width={200}
         height={300}
         className="rounded-lg"
@@ -59,7 +60,7 @@ function About() {
   return (
     <section id="about" className="">
       <SectionHeading>About me</SectionHeading>
-      <div className="flex flex-col gap-2 mt-6">
+      <div className="flex flex-col gap-2 mt-6 ">
         <p className="text-chart-5 ">
           I work across the whole stack, but my main focus is writing{" "}
           <span className="text-chart-2 font-bold ">React</span> and{" "}
@@ -77,18 +78,20 @@ function About() {
         </p>
         <div className="mt-2 flex flex-col gap-2">
           <hr />
-          {aboutItems.map((item) => (
-            <div key={item.topic}>
-              <div
-                key={item.topic}
-                className="flex gap-2 p-2 items-center justify-between "
-              >
-                <p className="text-muted-foreground">{item.topic}</p>
-                <p className="text-right">{item.desc}</p>
+          <div className="flex flex-col gap-1">
+            {aboutItems.map((item) => (
+              <div key={item.topic}>
+                <div
+                  key={item.topic}
+                  className="flex gap-2 p-2 items-center justify-between "
+                >
+                  <p className="text-muted-foreground">{item.topic}</p>
+                  <p className="text-right">{item.desc}</p>
+                </div>
+                <hr />
               </div>
-              <hr />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -142,8 +145,10 @@ function Contact() {
 function HeroHeader() {
   return (
     <div className="flex flex-col gap-6">
-      <Introduction />
-      <PhotoCard />
+      <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+        <Introduction />
+        <PhotoCard />
+      </div>
       <HeroButtons />
     </div>
   );
@@ -151,7 +156,10 @@ function HeroHeader() {
 
 export default function Home() {
   return (
-    <section className="h-full flex flex-col gap-14 p-8" id="home">
+    <section
+      className="h-full flex flex-col gap-14 p-8 max-w-6xl mx-auto "
+      id="home"
+    >
       <HeroHeader />
       <About />
       <Projects />

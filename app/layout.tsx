@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 function Logo() {
   return (
-    <Link href="/" className="flex gap-1 items-center ">
+    <Link href="/#home" className="flex gap-1  items-center md:ml-4 lg:ml-24">
       <Command className="size-5 text-chart-5" />
     </Link>
   );
