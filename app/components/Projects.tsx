@@ -37,7 +37,7 @@ const projects: Project[] = [
   {
     title: "Film Pivot",
     descs: [
-      "A learning project, and a React rewrite of my older Film Pivot site. You type a title and it debounces the query against the OMDb API and shows u the movie results.",
+      "A learning project, and a React rewrite of my older Film Pivot site. You type a title and it debounces the query against the OMDb API and shows you the movie results.",
       "Built with React 19, Vite and react-router-dom, styled with CSS Modules, animated with the View Transitions API, Deployed on Vercel.",
     ],
     projectLinks: [
