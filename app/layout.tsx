@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import SwitchTheme from "./components/SwitchTheme";
 import { ThemeProvider } from "next-themes";
-import Link from "next/link";
 import { Command } from "lucide-react";
 import Footer from "./components/Footer";
 import { geistMono, geistPixel, geistSans, oswald } from "./fonts";
@@ -16,9 +15,9 @@ export const metadata: Metadata = {
 
 function Logo() {
   return (
-    <Link href="/#home" className="flex gap-1  items-center md:ml-4 lg:ml-24">
+    <a href="#home" className="flex gap-1  items-center md:ml-4 lg:ml-24">
       <Command className="size-5 text-chart-5" />
-    </Link>
+    </a>
   );
 }
 
