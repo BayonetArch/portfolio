@@ -57,7 +57,7 @@ export default function Footer() {
             <GithubIcon />
           </a>
           <a
-            href="https://www.linkedin.com/in/sudip-paudel-6b3b4b1b7/"
+            href="https://www.linkedin.com/in/sudip-paudel-a149aa43a"
             target="_blank"
           >
             <LinkedInIcon />
