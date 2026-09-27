@@ -48,20 +48,24 @@ function LinkedInIcon() {
 
 export default function Footer() {
   return (
-    <div className="p-6 outline mt-20 flex flex-col gap-4 text-muted-foreground">
-      <p>Copyright (&copy;) 2026 Sudip Paudel.</p>
-      <p>Hand written with Next.js and modern tech stack.</p>
+    <div className="p-6 outline mt-20 flex md:flex-col gap-4 text-muted-foreground md:justify-center md:items-center">
       <div>
-        <div className="flex gap-4">
-          <a href="https://github.com/BayonetArch" target="_blank">
-            <GithubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/sudip-paudel-a149aa43a"
-            target="_blank"
-          >
-            <LinkedInIcon />
-          </a>
+        <div className="flex flex-col gap-1">
+          <p>Copyright (&copy;) 2026 Sudip Paudel.</p>
+          <p>Hand written with Next.js and modern tech stack.</p>
+        </div>
+        <div>
+          <div className="flex gap-4">
+            <a href="https://github.com/BayonetArch" target="_blank">
+              <GithubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sudip-paudel-a149aa43a"
+              target="_blank"
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
         </div>
       </div>
     </div>

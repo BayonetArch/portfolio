@@ -10,11 +10,15 @@ function Introduction() {
     <div className="flex flex-col gap-6">
       <SectionHeading>Introduction</SectionHeading>
 
-      <div className=" text-muted-foreground flex flex-col">
+      <div className=" text-muted-foreground flex flex-col md:text-lg">
         <p>
-          <span className="font-bold text-xl text-muted-foreground">HI</span>, I
-          am{" "}
-          <span className={`font-bold text-xl text-foreground font-pixel`}>
+          <span className="font-bold text-xl text-muted-foreground md:text-2xl">
+            HI
+          </span>
+          , I am{" "}
+          <span
+            className={`font-bold text-xl text-foreground font-pixel md:text-2xl`}
+          >
             Sudip Paudel.
           </span>
         </p>
@@ -60,21 +64,19 @@ function About() {
   return (
     <section id="about" className="">
       <SectionHeading>About me</SectionHeading>
-      <div className="flex flex-col gap-2 mt-6 ">
+      <div className="flex flex-col gap-2 mt-6 md:text-lg ">
         <p className="text-chart-5 ">
-          I work across the whole stack, but my main focus is writing{" "}
-          <span className="text-chart-2 font-bold ">React</span> and{" "}
-          <span className="text-chart-2 font-bold ">TypeScript</span> on one
-          side of the wire and
-          <span className="text-border font-bold"> Rust</span> or
-          <span className="text-border font-bold"> C </span> on the other and
+          I work across the whole stack, but my main focus is{" "}
+          <span className="text-border font-bold ">React</span> and{" "}
+          <span className="text-border font-bold ">TypeScript</span> on one
+          side,
+          <span className="font-bold text-[#FF3900]/60"> Rust</span> or
+          <span className="text-chart-2 font-bold"> C </span> on the other and
           being the person who can debug both.
           <br />
           <br />I care about{" "}
-          <span className="text-foreground">
-            readable code, honest benchmarks
-          </span>
-          , and shipping things that still make sense six months later .
+          <span className="text-foreground">fast, clean and readable code</span>
+          , while shipping things that still make sense six months later.
         </p>
         <div className="mt-2 flex flex-col gap-2">
           <hr />

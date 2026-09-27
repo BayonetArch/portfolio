@@ -21,8 +21,7 @@ const projects: Project[] = [
     title: "Neo Kut",
     descs: [
       "A (future) open source native video editor written in rust. Fully documented on youtube live.",
-      "Neo Kut is written using 'gstreamer-rs' for video processing, egui for gui and winit for cross-platform windowing. It is still work in progress by a single guy(me), but will be open sourced in future and available to contributions.",
-      "Neo Kut aims to be a open source video editor alternative without annoying popups. Check out the below youtube link for its development process.",
+      "Neo Kut is written using 'gstreamer-rs' for video processing, egui for gui and winit for cross-platform windowing. It is still work in progress by a single guy(me), but will be open sourced in future and open to contributions.",
     ],
 
     projectLinks: [
@@ -58,9 +57,9 @@ const projects: Project[] = [
   {
     title: "Hypr Zoomer",
     descs: [
-      "A high performance screen magnifier for Wayland compositors, and a Wayland take on Tsoding's boomer.",
-      "It contains about 30 keybindings to cover all the features like flashlight, drawing, etc. config is TOML generated via --generate-config, and it installs straight from crates.io. MIT licensed.",
-      "It has a flashlight mode that dims everything outside a configurable circle just like in the preview image. it also has freehand pen, arrow and rectangle annotations with undo/redo, bilinear and nearest-neighbour scaling and much more. check it out on github link below.",
+      "A high performance screen magnifier for Wayland compositors.",
+      "It contains about 30 keybindings to cover all the features like flashlight, drawing, etc. config is TOML generated via --generate-config, and it installs straight from crates.io.",
+      "It has a flashlight mode that dims everything outside a configurable circle just like in the preview image. it also has freehand pen, arrow and rectangle annotations with undo/redo, and much more. check it out on github link below.",
     ],
     projectLinks: [
       {
@@ -76,7 +75,7 @@ const projects: Project[] = [
     title: "Tx Launch",
     descs: [
       "A command line tool for launching Android apps from Termux, so you can start anything by typing a friendly name instead of a package name.",
-      "it has an interactive REPL with list and help commands, or you can use a one-shot --run from a script, with name suggestions when a name misses. MIT licensed, prebuilt binaries in Releases.",
+      "it has an interactive REPL with list and help commands, or you can use a one-shot --run from a script, with name suggestions when a name misses.",
       "Launching goes through am start, and you choose the backend: the bundled Termux am (slow, it runs on the JVM), termux-am from GitHub Action builds, or the system am, which is fastest but only works up to Android 10.",
     ],
     projectLinks: [
@@ -114,7 +113,7 @@ function ProjectCard({
           </div>
           {descs.map((desc, index) => (
             <div key={desc}>
-              <div className="hidden sm:flex">
+              <div className="hidden sm:flex text-lg">
                 <p className="text-muted-foreground">{desc}</p>
               </div>
 
