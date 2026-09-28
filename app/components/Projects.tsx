@@ -6,6 +6,7 @@ import TxLaunchPreview from "../assets/tx_launch.png";
 import NeoKutPreview from "../assets/neo_kut.png";
 import FilmPivotPreview from "../assets/film-pivot-react.png";
 import HyprZoomerPreview from "../assets/hypr_zoomer.png";
+import TodoListPreview from "../assets/todolist.png";
 
 type Project = {
   title: string;
@@ -70,6 +71,26 @@ const projects: Project[] = [
     previewImgSrc: HyprZoomerPreview,
     previewImgAlt: "preview of hypr Zoomer project",
     tags: ["rust", "tool", "wayland"],
+  },
+  {
+    title: "TODO APP",
+    descs: [
+      "A simple todo app made in react for learning purposes.",
+      "It has a clean colorscheme and easy navigations.",
+    ],
+    projectLinks: [
+      {
+        siteName: "github",
+        link: "https://github.com/BayonetArch/react-todolist",
+      },
+      {
+        siteName: "site",
+        link: "https://bayonet-react-todolist.vercel.app/",
+      },
+    ],
+    previewImgSrc: TodoListPreview,
+    previewImgAlt: "preview of todo list app",
+    tags: ["js", "react"],
   },
   {
     title: "Tx Launch",
