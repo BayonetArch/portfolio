@@ -146,7 +146,7 @@ function Contact() {
 
 function HeroHeader() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 md:gap-1">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between">
         <Introduction />
         <PhotoCard />
