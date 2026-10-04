@@ -4,6 +4,7 @@ import Projects from "./components/Projects";
 import SectionHeading from "./components/SectionHeading";
 import HeroButtons from "./components/HeroButton";
 import { Link as LinkIcon } from "lucide-react";
+import { Analytics } from "@vercel/analytics/next";
 
 function Introduction() {
   return (
@@ -166,6 +167,7 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
+      <Analytics />
     </section>
   );
 }
